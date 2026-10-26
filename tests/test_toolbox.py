@@ -27,7 +27,8 @@ def test_every_tool_has_valid_parameters(tbx):
     assert len(tools) == 7
     for cls in tools:
         tool = cls()
-        assert tool.label and tool.description and tool.category
+        assert tool.label and tool.description
+        assert tool.category in ('1. Import', '2. Processing', '3. Export'), tool.category
         params = tool.getParameterInfo()
         names = [p.name for p in params]
         assert len(names) == len(set(names)), cls.__name__

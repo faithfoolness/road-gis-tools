@@ -15,15 +15,17 @@ is one dialog with the same result every time.
 
 ## Tools
 
-| Tool | Category | What it does |
+In ArcGIS Pro the tools are grouped in the order of a typical workflow:
+
+| Group | Tool | What it does |
 |---|---|---|
-| **Axis Measures** | Linear referencing | Writes M values to every vertex of the axes: absolute start + distance along the line, measured in a chosen projected system. Optionally fills absolute end and length. |
-| **Kilometre Sections** | Linear referencing | Locates kilometre posts on the axis, fills their attributes, splits the axis into kilometre sections with M counted from the posts, and buffers every section. |
-| **Length in UTM Zones** | Linear referencing | Length of every line in the UTM zone that contains its midpoint, for road networks that span several zones. |
-| **Axis End Points** | Export | Start and end markers of every axis with coordinates, styled green/red and exported to KMZ. |
-| **Lines to KMZ** | Export | Lines to KMZ with a fixed style and only the chosen attributes. |
-| **Export All Layouts** | Export | Every layout of the project to JPEG or PNG in one go. |
-| **JSON Folder to GDB** | Conversion | All `.json` / `.geojson` files of a folder to feature classes in a file geodatabase. |
+| **1. Import** | **JSON Folder to GDB** | All `.json` / `.geojson` files of a folder to feature classes in a file geodatabase. |
+| **2. Processing** | **Axis Measures** | Writes M values to every vertex of the axes: absolute start + distance along the line, measured in a chosen projected system. Optionally fills absolute end and length. |
+| | **Kilometre Sections** | Locates kilometre posts on the axis, fills their attributes, splits the axis into kilometre sections with M counted from the posts, and buffers every section. |
+| | **Length in UTM Zones** | Length of every line in the UTM zone that contains its midpoint, for road networks that span several zones. |
+| **3. Export** | **Axis End Points** | Start and end markers of every axis with coordinates, styled green/red and exported to KMZ. |
+| | **Lines to KMZ** | Lines to KMZ with a fixed style and only the chosen attributes. |
+| | **Export All Layouts** | Every layout of the project to JPEG or PNG in one go. |
 
 ## How the linear referencing works
 

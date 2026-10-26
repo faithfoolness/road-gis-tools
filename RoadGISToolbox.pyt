@@ -100,8 +100,10 @@ class Toolbox:
     def __init__(self):
         self.label = "Road GIS Toolbox"
         self.alias = "roadgis"
-        self.tools = [AxisMeasures, KilometreSections, AxisEndPoints,
-                      LinesToKMZ, UTMLength, JSONFolderToGDB, ExportLayouts]
+        # Catalog sorts categories alphabetically; the numbers keep them in workflow order
+        self.tools = [JSONFolderToGDB,                                    # 1. Import
+                      AxisMeasures, KilometreSections, UTMLength,         # 2. Processing
+                      AxisEndPoints, LinesToKMZ, ExportLayouts]           # 3. Export
 
 
 # ----------------------------------------------------------------------
@@ -110,7 +112,7 @@ class AxisMeasures:
 
     def __init__(self):
         self.label = "Axis Measures"
-        self.category = "Linear referencing"
+        self.category = "2. Processing"
         self.description = (
             "Writes M values to every vertex of the selected axes: absolute start of the axis "
             "plus the distance along the line, measured in the chosen projected coordinate "
@@ -165,7 +167,7 @@ class KilometreSections:
 
     def __init__(self):
         self.label = "Kilometre Sections"
-        self.category = "Linear referencing"
+        self.category = "2. Processing"
         self.description = (
             "Locates kilometre posts on the road axis, fills their attributes (next post, measure "
             "on the axis, offset from the axis, actual kilometre length, coordinates), splits the "
@@ -305,7 +307,7 @@ class AxisEndPoints:
 
     def __init__(self):
         self.label = "Axis End Points"
-        self.category = "Export"
+        self.category = "3. Export"
         self.description = (
             "Creates a point at the start and at the end of every axis with its longitude and "
             "latitude, styles starts as green and ends as red triangles and exports them to KMZ.")
@@ -368,7 +370,7 @@ class LinesToKMZ:
 
     def __init__(self):
         self.label = "Lines to KMZ"
-        self.category = "Export"
+        self.category = "3. Export"
         self.description = ("Exports lines to KMZ as red 2 pt lines, keeping only the chosen "
                             "attributes. The source data is not modified.")
         self.canRunInBackground = False
@@ -414,7 +416,7 @@ class UTMLength:
 
     def __init__(self):
         self.label = "Length in UTM Zones"
-        self.category = "Linear referencing"
+        self.category = "2. Processing"
         self.description = (
             "Calculates the length of every line in the WGS 84 / UTM zone that contains its "
             "midpoint, so roads across several zones are measured without the distortion of a "
@@ -451,7 +453,7 @@ class JSONFolderToGDB:
 
     def __init__(self):
         self.label = "JSON Folder to GDB"
-        self.category = "Conversion"
+        self.category = "1. Import"
         self.description = ("Converts all .json and .geojson files in a folder to feature classes "
                             "in a file geodatabase, which is created if it does not exist.")
         self.canRunInBackground = False
@@ -483,7 +485,7 @@ class ExportLayouts:
 
     def __init__(self):
         self.label = "Export All Layouts"
-        self.category = "Export"
+        self.category = "3. Export"
         self.description = "Exports every layout of the current project to JPEG or PNG."
         self.canRunInBackground = False
 

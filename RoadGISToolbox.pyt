@@ -102,21 +102,22 @@ class Toolbox:
         self.alias = "roadgis"
         # Catalog sorts categories alphabetically; the numbers keep them in workflow order
         self.tools = [JSONFolderToGDB,                                    # 1. Import
-                      AxisMeasures, KilometreSections, UTMLength,         # 2. Processing
+                      MValuesCalculator, KilometreSections, UTMLength,    # 2. Processing
                       AxisEndPoints, LinesToKMZ, ExportLayouts]           # 3. Export
 
 
 # ----------------------------------------------------------------------
-class AxisMeasures:
-    """Recalculate M values of road axes from their absolute start."""
+class MValuesCalculator:
+    """Recalculate the M coordinate of road axes from their absolute start."""
 
     def __init__(self):
-        self.label = "Axis Measures"
+        self.label = "M Values Calculator"
         self.category = "2. Processing"
         self.description = (
-            "Writes M values to every vertex of the selected axes: absolute start of the axis "
-            "plus the distance along the line, measured in the chosen projected coordinate "
-            "system. Optionally fills the absolute end and the length of each axis.")
+            "Recalculates the M coordinate of every vertex of the selected axes: M = absolute "
+            "start of the axis + distance from the start along the line, measured in the chosen "
+            "projected coordinate system. Optionally fills the absolute end and the length of "
+            "each axis.")
         self.canRunInBackground = False
 
     def getParameterInfo(self):

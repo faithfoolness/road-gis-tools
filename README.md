@@ -20,7 +20,7 @@ In ArcGIS Pro the tools are grouped in the order of a typical workflow:
 | Group | Tool | What it does |
 |---|---|---|
 | **1. Import** | **JSON Folder to GDB** | All `.json` / `.geojson` files of a folder to feature classes in a file geodatabase. |
-| **2. Processing** | **Axis Measures** | Writes M values to every vertex of the axes: absolute start + distance along the line, measured in a chosen projected system. Optionally fills absolute end and length. |
+| **2. Processing** | **M Values Calculator** | Recalculates the M coordinate of every vertex of the axes: absolute start + distance along the line, measured in a chosen projected system. Optionally fills absolute end and length. |
 | | **Kilometre Sections** | Locates kilometre posts on the axis, fills their attributes, splits the axis into kilometre sections with M counted from the posts, and buffers every section. |
 | | **Length in UTM Zones** | Length of every line in the UTM zone that contains its midpoint, for road networks that span several zones. |
 | **3. Export** | **Axis End Points** | Start and end markers of every axis with coordinates, styled green/red and exported to KMZ. |
@@ -29,7 +29,7 @@ In ArcGIS Pro the tools are grouped in the order of a typical workflow:
 
 ## How the linear referencing works
 
-**Axis Measures.** Road axes are usually stored in geographic coordinates, but
+**M Values Calculator.** Road axes are usually stored in geographic coordinates, but
 measures must be in metres. The tool projects each line to the chosen system
 only to take distances, and writes the M values back onto the original
 vertices, so the data stays in its own coordinate system and keeps its

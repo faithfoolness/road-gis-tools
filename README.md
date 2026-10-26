@@ -1,7 +1,7 @@
-# Road GIS Toolbox
+# Road GIS Tools
 
-Geoprocessing tools for ArcGIS Pro that automate routine steps of road
-inventory work: linear referencing of road axes, kilometre sections,
+Tools that automate routine steps of road inventory work, most of them as an
+ArcGIS Pro toolbox (`RoadGISToolbox.pyt`): linear referencing of road axes, kilometre sections,
 lengths in the right projection, and exports for people who do not use GIS.
 
 ## Why

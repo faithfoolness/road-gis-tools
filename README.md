@@ -35,7 +35,7 @@ only to take distances, and writes the M values back onto the original
 vertices, so the data stays in its own coordinate system and keeps its
 object IDs. Multipart lines are measured continuously across parts.
 
-**Kilometre Sections.** Input: one road axis and its kilometre posts.
+**Split Axis by Kilometre Posts.** Input: one road axis and its kilometre posts.
 
 ```
 axis:  StartKM = 9, absolute start = 9 350 m

@@ -102,7 +102,7 @@ class Toolbox:
         self.alias = "roadgis"
         # Catalog sorts categories alphabetically; the numbers keep them in workflow order
         self.tools = [JSONFolderToGDB,                                    # 1. Import
-                      MValuesCalculator, KilometreSections, UTMLength,    # 2. Processing
+                      MValuesCalculator, SplitAxisByKilometrePosts, UTMLength,  # 2. Processing
                       AxisEndPoints, LinesToKMZ, ExportLayouts]           # 3. Export
 
 
@@ -163,11 +163,11 @@ class MValuesCalculator:
 
 
 # ----------------------------------------------------------------------
-class KilometreSections:
+class SplitAxisByKilometrePosts:
     """Split a road axis at kilometre posts and measure every kilometre."""
 
     def __init__(self):
-        self.label = "Kilometre Sections"
+        self.label = "Split Axis by Kilometre Posts"
         self.category = "2. Processing"
         self.description = (
             "Locates kilometre posts on the road axis, fills their attributes (next post, measure "

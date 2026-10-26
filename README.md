@@ -21,7 +21,7 @@ In ArcGIS Pro the tools are grouped in the order of a typical workflow:
 |---|---|---|
 | **1. Import** | **JSON Folder to GDB** | All `.json` / `.geojson` files of a folder to feature classes in a file geodatabase. |
 | **2. Processing** | **M Values Calculator** | Recalculates the M coordinate of every vertex of the axes: absolute start + distance along the line, measured in a chosen projected system. Optionally fills absolute end and length. |
-| | **Kilometre Sections** | Locates kilometre posts on the axis, fills their attributes, splits the axis into kilometre sections with M counted from the posts, and buffers every section. |
+| | **Split Axis by Kilometre Posts** | Locates kilometre posts on the axis, fills their attributes, splits the axis into kilometre sections with M counted from the posts, and buffers every section. |
 | | **Length in UTM Zones** | Length of every line in the UTM zone that contains its midpoint, for road networks that span several zones. |
 | **3. Export** | **Axis End Points** | Start and end markers of every axis with coordinates, styled green/red and exported to KMZ. |
 | | **Lines to KMZ** | Lines to KMZ with a fixed style and only the chosen attributes. |
